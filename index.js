@@ -11,6 +11,8 @@ mongoose.connect(process.env.MONGODB_URI, {
   useUnifiedTopology: true,
   useFindAndModify: false,
   useCreateIndex: true,
-}).then(() => {
-  server.start(PORT);
-});
+})
+  .then(() => {
+    server.start(PORT);
+  })
+  .catch(e => console.error('Could not start server', e.message));
