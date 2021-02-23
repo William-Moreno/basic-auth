@@ -1,0 +1,35 @@
+{
+  "name": "basic-auth",
+  "version": "1.0.0",
+  "description": "Deploy an Express server that implements Basic Authentication, with signup and signin capabilities, using a Mongo database for storage.",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "watch": "nodemon app.js",
+    "test-watch": "jest --watchAll",
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/William-Moreno/basic-auth.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/William-Moreno/basic-auth/issues"
+  },
+  "homepage": "https://github.com/William-Moreno/basic-auth#readme",
+  "dependencies": {
+    "base-64": "^1.0.0",
+    "bcrypt": "^5.0.0",
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "jest": "^26.6.3",
+    "mongoose": "^5.11.17"
+  },
+  "jest": {
+    "testEnvironment": "node"
+  }
+}
