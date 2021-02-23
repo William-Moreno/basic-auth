@@ -1,8 +1,6 @@
 'use strict';
 
 const bcrypt = require('bcrypt');
-const base64 = require('base-64');
-
 const express = require('express');
 const router = express.Router();
 
@@ -13,6 +11,10 @@ const basicAuth = require('../middleware/basic-auth.js');
 router.post('/signup', async (req, res) => {
   let username = req.body.username;
   let password = req.body.password;
+
+  if(!username || !password) {
+    res.status(400).send('Missing Username or Password');
+  }
 
   let encryptedPassword = await bcrypt.hash(password, 5);
   const newUser = new UserModel({ username: username, password: encryptedPassword });

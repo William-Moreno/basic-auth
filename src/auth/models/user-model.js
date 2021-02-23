@@ -10,15 +10,15 @@ const userSchema = mongoose.Schema({
 
 userSchema.pre('save', async () => console.log(this));
 
-encrypt(userSchema.password, 5).then(hash => {
-  bcrypt.compare(userSchema.password, hash);
-});
+// encrypt(userSchema.password, 5).then(hash => {
+//   bcrypt.compare(userSchema.password, hash);
+// });
 
-async function encrypt(stringToEncrypt, complexity) {
+// async function encrypt(stringToEncrypt, complexity) {
 
-  let hashed = await bcrypt.hash(stringToEncrypt, complexity);
-  return hashed;
-}
+//   let hashed = await bcrypt.hash(stringToEncrypt, complexity);
+//   return hashed;
+// }
 
 const userModel = mongoose.model('api_user', userSchema);
 

@@ -20,13 +20,13 @@ describe('Testing aunthenication server routes', () => {
     expect(response.body.username).toEqual('bob');
   });
 
-  // it('Should login as an existing user on POST /signin', async () => {
-  //   const response = await request.post(`/signin`).set({ Authorization: 'Basic Ym9iOnRlc3RwaWxvdA==' });
+  it('Should login as an existing user on POST /signin', async () => {
+    const response = await request.post(`/signin`).set({ Authorization: 'Basic Ym9iOnRlc3RwaWxvdA==' });
 
-  //   expect(response.status).toEqual(200);
-  //   expect(response.body.user._id).toEqual(documentId);
-  //   expect(response.body.user.username).toEqual('bob');
-  // });
+    expect(response.status).toEqual(200);
+    expect(response.body.user._id).toEqual(documentId);
+    expect(response.body.user.username).toEqual('bob');
+  });
 
   // it('Should trigger an error handler "Invalid Login" on any error', async () => {
   //   const response = await request.post(`/signin`).set({ Authorization: 'Basic c2FtOnRlc3RwaWxvdA==' });
