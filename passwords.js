@@ -4,8 +4,8 @@ const base64 = require('base-64');
 const bcrypt = require('bcrypt');
 
 // encoding an decoding
-let username = 'Jacob';
-let password = 'secret';
+let username = 'lolo';
+let password = 'testpilot';
 
 // encode both strings seperated by a colon (this makes things easier for the computer)
 let encodedString = base64.encode(`${username}:${password}`);
@@ -16,7 +16,7 @@ console.log(encodedString);
 
 // POST /auth 
 // header: { Authorization: `Basic SmFjb2I6YWRtaW4=`}
-let authHeader = { Authorization: 'Basic SmFjb2I6YWRtaW4=' };
+let authHeader = { Authorization: 'Basic bG9sbzp0ZXN0cGlsb3Q=' };
 
 // On the server
 
@@ -29,7 +29,7 @@ let decodedPassword = decodedString.split(':')[1];
 
 // As soon as possible we are going to encrypt
 encrypt(decodedPassword, 5).then(hash => {
-  compare('wrong', hash);
+  compare(password, hash);
 });
 
 // We use this whenever a user 'Signs Up'
